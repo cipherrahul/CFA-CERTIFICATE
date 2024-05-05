@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Certificate From RK INSTITUTION</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico"> <!-- Corrected the rel attribute -->
+</head>
+
+<body>
+    <header>
+        <img src="./RK INSTITUTION.jpg" alt="RK INSTITUTION Logo">
+        <h4>Get your certificate</h4>
+        <h1>RK INSTITUTION</h1>
+    </header>
+    <main>
+
+        <label for="name">Student Name</label>
+        <input required type="text" name="Name" autocomplete="name" placeholder="enter your name " id="name" minlength="3"
+            maxlength="30">
+        <button id="submitBtn">Get Certificate</button> <!-- Changed Button to button -->
+
+    </main>
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="./FileSaver.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
