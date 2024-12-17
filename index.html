@@ -6,23 +6,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Your Certificate From RK INSTITUTION</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico"> <!-- Corrected the rel attribute -->
+    <link rel="icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #6733e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0;
+            flex: 1;
+        }
+
+        label {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            color: #ff0000;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            width: 60%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #232F3E;
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <img src="./RK INSTITUTION.jpg" alt="RK INSTITUTION Logo">
-        <h4>Get your certificate</h4>
         <h1>RK INSTITUTION</h1>
+        <h4>Get your certificate</h4>
     </header>
     <main>
-
         <label for="name">Student Name</label>
-        <input required type="text" name="Name" autocomplete="name" placeholder="enter your name " id="name" minlength="3"
-            maxlength="30">
-        <button id="submitBtn">Get Certificate</button> <!-- Changed Button to button -->
-
+        <input required type="text" name="Name" autocomplete="name" placeholder="Enter your name" id="name" minlength="3" maxlength="30">
+        <button id="submitBtn">Get Certificate</button>
     </main>
+    <footer>
+        <div class="footer-section">
+            <h3>Get to Know Us</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Press Releases</a></li>
+                <li><a href="#">RK Institution Cares</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Educational Resources</h3>
+            <ul>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Workshops</a></li>
+                <li><a href="#">Webinars</a></li>
+                <li><a href="#">Certifications</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Student Support</h3>
+            <ul>
+                <li><a href="#">Academic Advising</a></li>
+                <li><a href="#">Career Services</a></li>
+                <li><a href="#">Counseling</a></li>
+                <li><a href="#">Tutoring</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Community</h3>
+            <ul>
+                <li><a href="#">Student Organizations</a></li>
+                <li><a href="#">Alumni Network</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Forums</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>Email: <a href="mailto:info@rkinstitution.com">info@rkinstitution.com</a></li>
+                <li>Phone: <a href="9818490248">+91 9818490248</a></li>
+                <li>Address: 123 Education Lane, Knowledge City, ED 45678</li>
+            </ul>
+        </div>
+    </footer>
     <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
     <script src="./FileSaver.js"></script>
     <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
