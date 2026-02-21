@@ -4,173 +4,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Certificate From RK INSTITUTION</title>
-    <link rel="stylesheet" href="style.css">
+    <title>RK Institution | Certificate Portal</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" href="favicon.ico">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #333;
         }
 
         header {
-            background-color: #6733e2;
-            color: white;
             padding: 20px;
             text-align: center;
+            color: white;
         }
 
         header img {
-            width: 100px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
+            width: 90px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
         main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 50px 0;
             flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
-        label {
-            font-size: 2.2em;
-            margin-bottom: 10px;
-            color: #ff0000;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        .certificate-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .certificate-card h2 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
         }
 
         input[type="text"] {
-            padding: 5px;
-            font-size: 1em;
-            margin-bottom: 20px;
-            width: 60%;
-            max-width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 20px;
-            font-size: 1em;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
             border: none;
-            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            color: white;
+            transition: 0.3s ease;
         }
 
         button:hover {
-            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         footer {
-            background-color: #232F3E;
+            background: rgba(0, 0, 0, 0.2);
             color: white;
-            padding: 20px 0;
+            padding: 40px 20px;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            font-size: 0.9rem;
         }
 
         .footer-section {
             margin: 10px;
-            min-width: 200px;
+            min-width: 180px;
         }
 
         .footer-section h3 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .footer-section ul {
             list-style: none;
-            padding: 0;
         }
 
         .footer-section ul li {
-            margin: 5px 0;
+            margin-bottom: 6px;
         }
 
         .footer-section ul li a {
             color: white;
             text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
         }
 
         .footer-section ul li a:hover {
+            opacity: 1;
             text-decoration: underline;
+        }
+
+        @media(max-width: 600px) {
+            .certificate-card {
+                padding: 25px;
+            }
         }
     </style>
 </head>
 
 <body>
+
     <header>
-        <img src="./RK INSTITUTION.jpg" alt="RK INSTITUTION Logo">
+        <img src="./RK INSTITUTION.jpg" alt="RK Institution Logo">
         <h1>RK INSTITUTION</h1>
-        <h4>Get your certificate</h4>
+        <p>Official Certificate Download Portal</p>
     </header>
+
     <main>
-        <label for="name">Student Name</label>
-        <input required type="text" name="Name" autocomplete="name" placeholder="Enter your name" id="name" minlength="3" maxlength="30">
-        <button id="submitBtn">Get Certificate</button>
+        <div class="certificate-card">
+            <h2>🎓 Generate Your Certificate</h2>
+
+            <div class="input-group">
+                <input required type="text" id="name" minlength="3" maxlength="30"
+                    placeholder="Enter Your Full Name">
+            </div>
+
+            <button id="submitBtn">Download Certificate</button>
+        </div>
     </main>
+
     <footer>
         <div class="footer-section">
-            <h3>Get to Know Us</h3>
+            <h3>About</h3>
             <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Press Releases</a></li>
-                <li><a href="#">RK Institution Cares</a></li>
+                <li><a href="#">About RK Institution</a></li>
+                <li><a href="#">Our Vision</a></li>
+                <li><a href="#">Leadership</a></li>
             </ul>
         </div>
+
         <div class="footer-section">
-            <h3>Educational Resources</h3>
+            <h3>Programs</h3>
             <ul>
                 <li><a href="#">Courses</a></li>
                 <li><a href="#">Workshops</a></li>
-                <li><a href="#">Webinars</a></li>
                 <li><a href="#">Certifications</a></li>
             </ul>
         </div>
+
         <div class="footer-section">
-            <h3>Student Support</h3>
+            <h3>Support</h3>
             <ul>
-                <li><a href="#">Academic Advising</a></li>
-                <li><a href="#">Career Services</a></li>
-                <li><a href="#">Counseling</a></li>
-                <li><a href="#">Tutoring</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Community</h3>
-            <ul>
-                <li><a href="#">Student Organizations</a></li>
-                <li><a href="#">Alumni Network</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Forums</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Contact Us</h3>
-            <ul>
-                <li>Email: <a href="mailto:info@rkinstitution.com">info@rkinstitution.com</a></li>
-                <li>Phone: <a href="9818490248">+91 9818490248</a></li>
-                <li>Address: 123 Education Lane, Knowledge City, ED 45678</li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Student Services</a></li>
             </ul>
         </div>
     </footer>
+
+    <!-- PDF Libraries -->
     <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
-    <script src="./FileSaver.js"></script>
     <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="./FileSaver.js"></script>
     <script src="./index.js"></script>
+
 </body>
 
 </html>
