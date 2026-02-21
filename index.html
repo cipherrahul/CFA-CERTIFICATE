@@ -1,218 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RK Institution | Certificate Portal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RK Institution • Certificate Portal</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --clr-primary:   #5b21b6;     /* violet-700 */
+      --clr-primary-d: #4c1d95;
+      --clr-accent:    #ec4899;     /* pink-500 */
+      --clr-bg:        #0f172a;     /* slate-900 */
+      --clr-card:      rgba(30, 41, 59, 0.65);
+      --clr-text:      #f1f5f9;
+      --clr-text-mute: #94a3b8;
+      --radius:        16px;
+      --shadow:        0 20px 40px -12px rgba(0,0,0,0.5);
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #333;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+      color: var(--clr-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
 
-        header img {
-            width: 90px;
-            margin-bottom: 10px;
-        }
+    header {
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+    }
 
-        header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+    header img {
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.15);
+      margin-bottom: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
 
-        header p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 6vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
 
-        main {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+    header p {
+      font-size: 1.1rem;
+      color: var(--clr-text-mute);
+      max-width: 480px;
+      margin: 0 auto;
+    }
 
-        .certificate-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 40px;
-            width: 100%;
-            max-width: 420px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            color: white;
-        }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
 
-        .certificate-card h2 {
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
+    .card {
+      background: var(--clr-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 2.8rem 2rem;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.35s ease;
+    }
 
-        .input-group {
-            margin-bottom: 20px;
-        }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 50px -16px rgba(0,0,0,0.55);
+    }
 
-        input[type="text"] {
-            width: 100%;
-            padding: 12px 15px;
-            border-radius: 10px;
-            border: none;
-            outline: none;
-            font-size: 1rem;
-        }
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: white;
+    }
 
-        input[type="text"]:focus {
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        }
+    .form-group {
+      margin-bottom: 1.6rem;
+      text-align: left;
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: none;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            background: linear-gradient(135deg, #ff6a00, #ee0979);
-            color: white;
-            transition: 0.3s ease;
-        }
+    label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--clr-text-mute);
+    }
 
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.95rem 1.2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: white;
+      font-size: 1.05rem;
+      transition: all 0.2s ease;
+    }
 
-        footer {
-            background: rgba(0, 0, 0, 0.2);
-            color: white;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-        }
+    input:focus {
+      outline: none;
+      border-color: var(--clr-accent);
+      box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.25);
+      background: rgba(255,255,255,0.09);
+    }
 
-        .footer-section {
-            margin: 10px;
-            min-width: 180px;
-        }
+    input::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
 
-        .footer-section h3 {
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
+    .error {
+      color: #f87171;
+      font-size: 0.85rem;
+      margin-top: 0.4rem;
+      display: none;
+    }
 
-        .footer-section ul {
-            list-style: none;
-        }
+    button {
+      width: 100%;
+      padding: 1.1rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(90deg, var(--clr-primary), #7c3aed);
+      color: white;
+      cursor: pointer;
+      transition: all 0.28s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .footer-section ul li {
-            margin-bottom: 6px;
-        }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(91, 33, 182, 0.4);
+    }
 
-        .footer-section ul li a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: 0.3s;
-        }
+    button:active {
+      transform: translateY(0);
+    }
 
-        .footer-section ul li a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
+    button.loading::after {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      left: 50%;
+      margin: -9px 0 0 -9px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
 
-        @media(max-width: 600px) {
-            .certificate-card {
-                padding: 25px;
-            }
-        }
-    </style>
+    button.loading span { opacity: 0; }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    footer {
+      padding: 3rem 1.5rem 2rem;
+      background: rgba(0,0,0,0.25);
+      color: var(--clr-text-mute);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #c084fc;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #e9d5ff;
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      margin: 1.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.4rem; }
+      header { padding-top: 2rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>
-        <img src="./RK INSTITUTION.jpg" alt="RK Institution Logo">
-        <h1>RK INSTITUTION</h1>
-        <p>Official Certificate Download Portal</p>
-    </header>
+  <header>
+    <img src="./RK INSTITUTION.jpg" alt="RK Institution Logo">
+    <h1>RK Institution</h1>
+    <p>Official Secure Certificate Download Portal</p>
+  </header>
 
-    <main>
-        <div class="certificate-card">
-            <h2>🎓 Generate Your Certificate</h2>
+  <main>
+    <div class="card">
+      <h2>Generate Your Certificate</h2>
 
-            <div class="input-group">
-                <input required type="text" id="name" minlength="3" maxlength="30"
-                    placeholder="Enter Your Full Name">
-            </div>
-
-            <button id="submitBtn">Download Certificate</button>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-section">
-            <h3>About</h3>
-            <ul>
-                <li><a href="#">About RK Institution</a></li>
-                <li><a href="#">Our Vision</a></li>
-                <li><a href="#">Leadership</a></li>
-            </ul>
+      <form id="certForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            placeholder="Enter your full name" 
+            minlength="3" 
+            maxlength="50" 
+            required 
+            autocomplete="name"
+          >
+          <div class="error" id="nameError">Please enter a valid name (3–50 characters)</div>
         </div>
 
-        <div class="footer-section">
-            <h3>Programs</h3>
-            <ul>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Workshops</a></li>
-                <li><a href="#">Certifications</a></li>
-            </ul>
-        </div>
+        <button type="submit" id="submitBtn">
+          <span>Download Certificate</span>
+        </button>
+      </form>
+    </div>
+  </main>
 
-        <div class="footer-section">
-            <h3>Support</h3>
-            <ul>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Student Services</a></li>
-            </ul>
-        </div>
-    </footer>
+  <footer>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Programs</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <p>© 2026 RK Institution. All rights reserved.</p>
+  </footer>
 
-    <!-- PDF Libraries -->
-    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
-    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
-    <script src="./FileSaver.js"></script>
-    <script src="./index.js"></script>
+  <!-- Keep your existing scripts -->
+  <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+  <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+  <script src="./FileSaver.js"></script>
+  <script src="./index.js"></script>
+
+  <!-- Optional: basic client-side validation example -->
+  <script>
+    const form = document.getElementById('certForm');
+    const nameInput = document.getElementById('name');
+    const nameError = document.getElementById('nameError');
+    const btn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      if (nameInput.value.trim().length < 3) {
+        nameError.style.display = 'block';
+        valid = false;
+      } else {
+        nameError.style.display = 'none';
+      }
+
+      if (valid) {
+        btn.classList.add('loading');
+        btn.disabled = true;
+        // your pdf generation logic here...
+        // after finish:
+        // btn.classList.remove('loading');
+        // btn.disabled = false;
+      }
+    });
+  </script>
 
 </body>
-
 </html>
